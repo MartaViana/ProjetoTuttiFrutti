@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutti Frutti</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css.css">
+<!------ Include the above in your HEAD tag ---------->
+<body>
+
+
+<div class="container">
+    <div class="barra">
+
+        <!----------------------------------separadores ------------------------>
+        <div class="row" id="tabs" style=" margin-right: 4px; margin-left: 0;">
+            <div class="column left">
+                <span class="dot" style="background:#ED594A;"></span>
+                <span class="dot" style="background:#FDD800;"></span>
+                <span class="dot" style="background:#5AC05A;"></span>
+            </div>
+            <div class="column middle">
+                <div class="tab">
+
+                    <button class="tablinks" onclick="openCity(event, 'wetube1' , 1)"> WeTube <i
+                            class="fa fa-close w3-small"></i>
+                    </button>
+
+                    <button id="fizz" class="tablinks" onclick="openCity(event, 'fizzbook1', 2)"> Phizbook <i
+                            class="fa fa-close w3-small"></i></button>
+
+                    <button id="notiseria" class="tablinks" onclick="openCity(event, 'notis', 3)"> Inspector <i
+                            class="fa fa-close w3-small"></i></button>
+
+                    <button id="noticlick2" class="tablinks" onclick="openCity(event, 'noticlick', 4)"><span
+                            id="titulonoti"> </span> <i
+                            class="fa fa-close w3-small"></i></button>
+
+                    <button id="quizz" class="tablinks" style="visibility: hidden"
+                            onclick="openCity(event, 'quizzes', 5)"> Quizzes <i
+                            class="fa fa-close w3-small"></i></button>
+
+                    <button id="quizzindivi" class="tablinks" style="visibility: hidden"
+                            onclick="openCity(event, 'quizzindi', 6)"><span id="tituloquizz"> </span> <i
+                            class="fa fa-close w3-small"></i></button>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="column right">
+
+            </div>
+        </div>
+
+
+        <div class="row" id="search">
+            <div class="column left">
+                <img id="browserB" src="images/browserB.png">
+            </div>
+            <div class="column middle">
+                <input disabled type="text" value="https://www.tuttifrutti.com"
+                       style=" background: #f1f1f1;">
+            </div>
+            <div class="column right">
+                <div style="float:right">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="content">
+
+        <!--------------------- wetube----------------------------->
+        <div id="wetube1" class="tabcontent"  >
+
+            <img id="wetube" src="images/wetube.png" >
+            <div class="video">
+                <iframe id="video" width="80%;" height="394"  scrolling="no"  src="https://www.youtube.com/embed/P2qOZDuiYlM?autoplay=1"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!--------------------- fizztube----------------------------->
+
+        <div id="fizzbook1" class="tabcontent">
+            <img id="chat" src="images/chat.png" width="17%">
+            <img id="fizzbook" src="images/fizzbook.png">
+            <img id="barra" src="images/barra_fizz.png">
+
+            <!--chat-->
+            <div id="chat-window" style="visibility: hidden">
+
+                <div id="mensagem">
+                    <img id="chatmen" src="images/chat1.png" style="z-index: 1000; width: 100%; ">
+                    <img id="men1" src="images/men1.png" style="z-index: 1001; width: 70%; position: absolute; top:60px; left: 24px; cursor: pointer;
+">
+
+                    <video id="chatvideo" style="display: none; z-index: 10000; width: 201px; height: 168px;">
+                        <source src="images/chat_pc.mp4" type="video/mp4">
+                    </video>
+
+
+                </div>
+
+            </div>
+
+            <div id="chat-window2">
+
+                <div id="mensagem2">
+                    <img id="chat2" src="images/chat2.png" style="z-index: 1000; width: 100%; ">
+                    <img id="men2" src="images/men2.png" style="z-index: 1001; width: 70%; position: absolute; top:60px; left: 24px; cursor: pointer;
+">
+
+
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------noticia seria----------------------------->
+
+        <div id="notis" class="tabcontent">
+            <img id="noticiaseria" src="images/centeno.png" alt="centeno" width="100%">
+
+
+
+        </div>
+
+
+        <!---------------------noticia click ----------------------------->
+
+        <div id="noticlick" class="tabcontent">
+            <img class="noticiaclick" src="images/insta2.png" alt="insta" width="100%">
+
+        </div>
+
+        <!---------------------mail ----------------------------->
+
+        <div class="mail">
+            <div class="framemail">
+                <button type="button" id="closemail" class="close" aria-label="Close"
+                        style="background-color:#8ccaef; border:none;height: 20px; margin-top: -15px">
+                    <span style="font-size: 50pt" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <img src="images/mail.png" alt="mail" style=" width: 100%;">
+
+        </div>
+
+
+        <!---------------------skype----------------------------->
+
+        <div id="skype">
+
+            <div id="skypeTitulo">
+                SKYPE
+            </div>
+            <div id="skypeCont">
+
+                <span class="dotSkype"></span><br>
+                <span style="font-weight: bold">Carlitos</span> <br>
+                <span id="subSkype">A ligar </span> <br>
+
+                <button id="atender">Atender</button>
+                <button id="desligar">Desligar</button>
+
+            </div>
+
+        </div>
+
+        <!--------------------- Quizz----------------------------->
+        <div id="quizzes" class="tabcontent">
+
+            <img id="quizzz" src="images/quizz.png" style="overflow: hidden" height="100vh">
+            <div class="quizz1"> IR</div>
+            <div class="quizz2"> IR</div>
+            <div class="quizz3"> IR</div>
+
+
+        </div>
+
+        <!--------------------- Quizz individual----------------------------->
+        <div id="quizzindi" class="tabcontent" style="height: 100vh;">
+
+            <div id="quizz1" style="display: none; width: 60%; margin-left: 20%;">
+                <br>
+                <div><h1 class="texto1"> AWESOME QUIZZES </h1></div>
+                <hr style="height:5px; background-color:#8CCAEF;"/>
+
+                <div class="texto2"><h2> Quizz 1 </h2></div>
+                <hr style="width: 80%; height:3px; background-color:#DD8AB9; margin-left: auto; margin-right: auto; margin-bottom: 2%;"/>
+
+
+                <h41>1 - Escolhe algo com nutella:</h41>
+                <label class="container1"><input type="checkbox"> Crepe <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Waffle <span class="checkmark"></span> </label>
+
+                <h41>2 - Escolhe uma tarte :</h41>
+                <label class="container1"><input type="checkbox"> Chocolate <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Banana <span class="checkmark"></span> </label>
+
+                <h41>3 - Escolhe algo para comer com gelado:</h41>
+                <label class="container1"><input type="checkbox"> Oreo <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Fruta <span class="checkmark"></span> </label>
+
+                <br>
+                <img class="bolo" src="images/bolo.png" style="width: 15%; margin-left: 40%; cursor: pointer">
+
+
+            </div>
+
+            <div id="quizz2" style="display: none; width: 60%; margin-left: 20%;">
+                <br>
+                <div><h1 class="texto1"> AWESOME QUIZZES </h1></div>
+                <hr style="height:5px; background-color:#8CCAEF;"/>
+
+                <div class="texto2"><h2> Quizz 2 </h2></div>
+                <hr style="width: 80%; height:3px; background-color:#DD8AB9; margin-left: auto; margin-right: auto; margin-bottom: 2%;"/>
+
+
+                <h41>1 - Escolhe os ingredientes:</h41>
+                <label class="container1"><input type="checkbox"> Porco desfiado <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Queijo <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Alface <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Cenoura <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Arroz <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Milho <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Feijão <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Camarão <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Abacate <span class="checkmark"></span> </label>
+
+                <h41>1 - Escolhe um molho:</h41>
+                <label class="container1"><input type="checkbox"> Wasabi <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Mustarda <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Ketchup <span class="checkmark"></span> </label>
+
+                <br>
+                <img class="bolo" src="images/bolo.png" style="width: 15%; margin-left: 40%; cursor: pointer"></div>
+
+
+            <div id="quizz3" style="display: none;width: 60%; margin-left: 20%;">
+
+                <br>
+                <div><h1 class="texto1"> AWESOME QUIZZES </h1></div>
+                <hr style="height:5px; background-color:#8CCAEF;"/>
+
+                <div class="texto2"><h2> Quizz 3 </h2></div>
+                <hr style="width: 80%; height:3px; background-color:#DD8AB9; margin-left: auto; margin-right: auto; margin-bottom: 2%;"/>
+
+
+                <h41>1 - Escolhe o teu pão:</h41>
+                <label class="container1"><input type="checkbox"> Branco <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Cereais <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Sem glúten  <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Integral <span class="checkmark"></span> </label>
+
+                <h41>2 - Escolhe acompanhamento :</h41>
+                <label class="container1"><input type="checkbox"> Creme de queijo <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Ovo <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Bacon <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Cebola <span class="checkmark"></span> </label>
+
+                <h41>3 - Escolhe uma fruta:</h41>
+                <label class="container1"><input type="checkbox"> Maça <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Banana <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Figos <span class="checkmark"></span> </label>
+                <label class="container1"><input type="checkbox"> Morangos <span class="checkmark"></span> </label>
+
+                <br>
+                <img class="bolo" src="images/bolo.png" style="width: 15%; margin-left: 40%; cursor: pointer">
+            </div>
+
+            <!--------------------- Resultado Quizz----------------------------->
+
+            <div id="resquizz" class="tabcontent" style="display: none;">
+
+                <img src="images/resquizz.png" style="width: 70vw; top: 100px; position: absolute">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!---------------------telemovel----------------------------->
+
+<div class="telemovel">
+
+    <div class="chamada">
+        <img id="rechamada" src="images/rechamada.png">
+        <div class="opçoes">
+            <img id="atendertele" style="width: 25%; margin-left: 40px; cursor: pointer" src="images/atender.png">
+            <img id="desligartele" style="width: 25%; margin-right: 40px; float:right; cursor: pointer"
+                 src="images/desligar.png">
+        </div>
+    </div>
+
+    <div class="insta">
+        <video id="instavid">
+            <source src="images/instavid.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="mensagemtele" style="z-index: 10000; visibility: hidden; width: 100%; top: 0; position: absolute">
+
+        <video style="width: 216px;" id="mensagemtele">
+            <source src="images/chat_tel%20(convertido).mp4" type="video/mp4">
+        </video>
+
+
+    </div>
+
+    <div class="tinder">
+
+        <img id="tinderimage" src="images/tinder1.png">
+
+        <div style="z-index: 11111111" class="opçoes">
+            <img id="nao" style="width: 25%; margin-left: 40px; cursor: pointer" src="images/nao.png">
+            <img id="sim" style="width: 25%; margin-right: 40px; float:right; cursor: pointer"
+                 src="images/sim.png">
+        </div>
+
+    </div>
+
+
+    <div class="candy" style="z-index: 10001; visibility: hidden; width: 100%; top: 0; position: absolute">
+
+        <video style="width: 216px;" id="candy">
+            <source src="images/candy.mp4" type="video/mp4">
+        </video>
+
+
+    </div>
+
+
+    <!-------------sons------------------------------->
+    <audio id="faceMen">
+        <source src="sons/facebook_messenger.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="noti">
+        <source src="sons/notificação.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="skypesom" loop>
+        <source src="sons/facebook_call.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="telesom" loop>
+        <source src="sons/chamada.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="voz">
+        <source src="sons/voztele.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="tinderM">
+        <source src="sons/tinderMacth.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="candyM" loop>
+        <source src="sons/candy.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="memeS" >
+        <source src="sons/meme.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="emailS" >
+        <source src="sons/email.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="tv" loop >
+        <source src="sons/televisao.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="tinderC" >
+        <source src="sons/tinder.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<div id="noticima" class="notificaçao"> Será este o primeiro meme do mundo?
+</div>
+<div id="notibaixo" class="notificaçao">Os 19 tipos de “Like” do Finstagrama
+</div>
+
+<div id="notifi">
+
+    <div id="notifi1" class="notificacoes"> Novo i-mail: <br> De: Artur
+    </div>
+    <div id="notifi2" class="notificacoes"> ALERTA <br> Descida de temperatura
+    </div>
+    <div id="notifi3" class="notificacoes"> Lembrete: <br> Aniversário Avó
+    </div>
+    <div id="notifi4" class="notificacoes"> Atualização: <br> Têm 2 dias
+    </div>
+    <div id="notifi5" class="notificacoes"> Tens problema de queda de cabelo? <br> Descobre a solução
+    </div>
+    <div id="notifi6" class="notificacoes"> O alimento preferido para emagrecimento
+    </div>
+    <div id="notifi7" class="notificacoes"> Promoção! <br> 20% de desconto no aspirador
+    </div>
+</div>
+
+<div id="memesdiv" style="height: 100vh; width: 100vw; z-index: 1000000; position:fixed; top:0; display: none" >
+
+</div>
+
+
+</body>
+</html>
+
+<script src="script.js"></script>
+
+<script>
+    var estado = 1;
+    //começar com wetube
+    window.onload = PriAba('wetube1', 1);
+
+</script>
